@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:multipleblocinflutterapp/blocs/bloc_provider.dart';
+import 'package:multipleblocinflutterapp/blocs/counter_bloc.dart';
+import 'package:multipleblocinflutterapp/blocs/text_bloc.dart';
+import 'package:multipleblocinflutterapp/ui/counter_screen.dart';
+import 'package:multipleblocinflutterapp/ui/text_screen.dart';
 
 
 class MainScaffold extends StatelessWidget {
@@ -15,7 +20,40 @@ class MainScaffold extends StatelessWidget {
         title : Text('multiple BLoCs'),
         ),
       body: Center(
-        child: Text('Salut les codeurs'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Choisissez votre bloc'),
+            RaisedButton(
+              child: Text('Compteur'),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) {
+                    return BlocProvider<CounterBloc>(
+                      child: CounterScreen(),
+                      bloc: CounterBloc(),
+                    );
+                  }),
+                );
+              },
+
+            ),
+            RaisedButton(
+              child: Text('Texte'),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) {
+                    return BlocProvider<TextBloc>(
+                      child: TextScreen(title: 'texteee'),
+                      bloc: TextBloc(),
+                    );
+                  }),
+                );
+              },
+
+            ),
+          ],
+        ),
       ),
     );
   }
