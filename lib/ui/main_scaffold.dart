@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:multipleblocinflutterapp/blocs/bloc_provider.dart';
 import 'package:multipleblocinflutterapp/blocs/counter_bloc.dart';
 import 'package:multipleblocinflutterapp/blocs/text_bloc.dart';
+import 'package:multipleblocinflutterapp/common/quote/CreateQuoteElement.dart';
+import 'package:multipleblocinflutterapp/ui/QuoteElementBloc.dart';
 import 'package:multipleblocinflutterapp/ui/counter_screen.dart';
 import 'package:multipleblocinflutterapp/ui/text_screen.dart';
 
@@ -29,10 +31,7 @@ class MainScaffold extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) {
-                    return BlocProvider<CounterBloc>(
-                      child: CounterScreen(),
-                      bloc: CounterBloc(),
-                    );
+                    return CounterScreen();
                   }),
                 );
               },
@@ -48,6 +47,21 @@ class MainScaffold extends StatelessWidget {
                       bloc: TextBloc(),
                     );
                   }),
+                );
+              },
+
+            ),
+
+            RaisedButton(
+              child: Text('Create quote Element'),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) {
+                      return BlocProvider<CreateQuoteElementBloc>(
+                        child: CreateQuoteElement(),
+                        bloc: CreateQuoteElementBloc(),
+                      );
+                    }),
                 );
               },
 

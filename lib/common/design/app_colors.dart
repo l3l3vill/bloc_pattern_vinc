@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:orion_delivery/model/enum/enumState.dart';
 
 class AppColors {
 
@@ -171,77 +170,6 @@ class AppColors {
     }
   }
 
-  Color changeColorClipOval(String state) {
-    if (state == "À faire") {
-      return Colors.yellow ;
-    } else if (state == "begin") {
-      return Colors.yellow ;
-    } else if (state == "Absence Client") {
-      return Colors.orange;
-    } else if (state == "Autre motif") {
-      return Colors.orange;
-    } else if (state == "Terminée") {
-      return Colors.green;
-    } else if (state == "report") {
-      return Colors.orange;
-    } else if (state == "Raisons personnelles") {
-      return Colors.orange;
-    }
-  }
-  Color changeColorClipOvalToInt(EnumState state) {
-    if (state == EnumState.notBegin) {
-      return Colors.yellow ;
-    } else if (state == EnumState.inProgress) {
-      return Colors.yellow ;
-    } else if (state == EnumState.cancel) {
-      return Colors.orange;
-    } else if (state == EnumState.cancel) {
-      return Colors.orange;
-    } else if (state == EnumState.done) {
-      return Colors.green;
-    } else if (state == EnumState.report) {
-      return Colors.orange;
-    } else if (state == EnumState.cancel) {
-      return Colors.orange;
-    }
-  }
-
-  IconData changeIconClipOval(String state) {
-
-    if (state == "À faire") {
-      return Icons.hourglass_empty_outlined;
-    } else if (state == "begin") {
-      return Icons.clear;
-    } else if (state == "Absence Client") {
-      return Icons.clear;
-    } else if (state == "Autre motif") {
-      return Icons.clear;
-    } else if (state == "Terminée") {
-      return Icons.done;
-    } else if (state == "report") {
-      return Icons.report_problem_outlined;
-    } else if (state == "Raisons personnelles") {
-      return Icons.report_problem_outlined;
-    }
-  }
-  IconData changeIconClipOvalToInt(EnumState state) {
-
-    if (state == EnumState.notBegin) {
-      return Icons.hourglass_empty_outlined;
-    } else if (state == EnumState.inProgress) {
-      return Icons.clear;
-    } else if (state == EnumState.cancel) {
-      return Icons.clear;
-    } else if (state == EnumState.cancel) {
-      return Icons.clear;
-    } else if (state == EnumState.done) {
-      return Icons.done;
-    } else if (state == EnumState.report) {
-      return Icons.report_problem_outlined;
-    } else if (state == EnumState.cancel) {
-      return Icons.report_problem_outlined;
-    }
-  }
 
   Color changeColorBackgroundContainerWithProgress(String state) {
     if (state == "À faire") {
@@ -268,30 +196,7 @@ class AppColors {
 
   }
 
-  Color changeColorBackgroundContainerWithProgressToInt(EnumState state) {
-    if (state == EnumState.notBegin) {
-      return AppColors.tag;
-      //return AppColors._colorToDo;
-    } else if (state == EnumState.inProgress) {
-      return AppColors.tag;
-      //return AppColors._colorBegin;
-    } else if (state == EnumState.cancel) {
-      return AppColors.tag;
-      //return AppColors._colorAbs;
-    } else if (state == "Autre motif") {
-      return AppColors.tag;
-      //return Colors.deepPurpleAccent;
-    } else if (state == "Terminée") {
-      return AppColors.tag;
-      //return AppColors._colorDone;
-    } else if (state == "report") {
-      return AppColors.tag;
-      //return AppColors._colorReport;
-    }else if (state == "Raisons personnelles") {
-      return Colors.cyan;
-    }
 
-  }
 
   Color changeColorBackgroundContainerWithProgressRefound(String state) {
     if (state == "À faire") {

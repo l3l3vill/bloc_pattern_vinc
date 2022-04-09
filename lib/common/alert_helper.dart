@@ -1,44 +1,12 @@
-import 'package:flushbar/flushbar.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:orion_delivery/common/design/app_colors.dart';
-import 'package:orion_delivery/common/design/app_size.dart';
+import 'package:multipleblocinflutterapp/common/widgets/my_text.dart';
 
-import 'package:orion_delivery/common/widgets/my_text.dart';
-import 'package:orion_delivery/navigation_router.dart';
+
+import 'design/app_colors.dart';
 
 class AlertHelper  {
-
-
-  snackBarTopTrue(BuildContext context, String message, Color color, ) {
-    Flushbar(
-      message: message,
-      duration: Duration(seconds: 2),
-      backgroundColor: color,
-      flushbarPosition: FlushbarPosition.TOP,
-      flushbarStyle: FlushbarStyle.FLOATING ,
-      icon: Icon(
-        Icons.check,
-        color: Colors.greenAccent,
-      ),
-    )..show(context);
-  }
-
-  snackBarTopFalse(BuildContext context, String message, Color color) {
-    Flushbar(
-      message: message,
-      duration: Duration(seconds: 2),
-      backgroundColor: color,
-      flushbarPosition: FlushbarPosition.TOP,
-      flushbarStyle: FlushbarStyle.FLOATING ,
-      icon: Icon(
-        Icons.close,
-        color: Colors.white,
-      ),
-    )..show(context);
-  }
-
-
 
   Future<void> alertError(BuildContext context, String errorMessage) async {
     MyText title = MyText("Erreur", color: Colors.black);

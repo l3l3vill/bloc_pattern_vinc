@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:orion_delivery/common/design/app_size.dart';
+
 
 
 //class DisplayPhotosOrIcon extends StatelessWidget {

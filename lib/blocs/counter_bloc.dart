@@ -1,31 +1,45 @@
 import 'bloc.dart';
 import 'dart:async';
 
-
 class CounterBloc extends Bloc {
-  int count = 0;
-  CounterBloc() { // à l'init donner une valeur de départ avec le int ci-dessus
-    sink.add(count);
-  }
-  final _streamController = StreamController<int>(); // creation du streamController
-  // entrées => Sink
-  Sink<int> get sink => _streamController.sink;
+  double count = 0;
+  // init the counter to 10
+  String text1 = "Vincent";
+  
+  //************************************************************ 
+  // constructor Bloc
 
+  CounterBloc(this.text1) {
+    // step 1 tu fais ton bloc et le counter marche normalement
+    // do request
+    print("[BLOC] Counter Bloc");
+    
+  }
+  //************************************************************ 
+  // creation du streamController
+  final _streamRequestUserDataController = StreamController<double>();
+  
+  // entrées => Sink
+  Sink<double> get sinkRequest => _streamRequestUserDataController.sink;
+
+  // sorties => Le stream
+  Stream<double> get streamRequest => _streamRequestUserDataController.stream;
+
+  //************************************************************ 
   // logique de travail
   increment() {
     count = count + 1;
-    sink.add(count);
+    sinkRequest.add(count);
   }
+
   decrement() {
     count = count - 1;
-    sink.add(count);
+    sinkRequest.add(count);
   }
-
-  // sorties => Le stream
-  Stream<int> get stream => _streamController.stream;
-
+  //************************************************************ 
   // fermeture du bloc
   @override
-  void dispose() => _streamController.close();
-
+  void dispose() {
+    _streamRequestUserDataController.close();
+  }
 }

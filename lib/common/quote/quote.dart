@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:orion_delivery/model/enum/enumVat.dart';
-import 'package:orion_delivery/model/quote/quote_element.dart';
+import 'package:multipleblocinflutterapp/common/quote/quote_element.dart';
+
 part 'quote.g.dart';
 
 @JsonSerializable(explicitToJson: true)

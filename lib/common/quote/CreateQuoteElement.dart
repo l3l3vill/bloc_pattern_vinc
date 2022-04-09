@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:orion_delivery/bloc/bloc_provider.dart';
-import 'package:orion_delivery/common/alert_helper.dart';
-import 'package:orion_delivery/common/design/app_colors.dart';
-import 'package:orion_delivery/common/design/app_size.dart';
-import 'package:orion_delivery/common/widgets/padding_child.dart';
-import 'package:orion_delivery/model/quote/quote.dart';
-import 'package:orion_delivery/model/quote/quote_element.dart';
-import 'package:orion_delivery/screens/intervention_details/quoteCreation/CreateQuoteElementBloc.dart';
-import 'package:orion_delivery/services/remote_db/mango_db_services.dart';
+import 'package:multipleblocinflutterapp/blocs/bloc_provider.dart';
+import 'package:multipleblocinflutterapp/common/alert_helper.dart';
+import 'package:multipleblocinflutterapp/common/design/app_colors.dart';
+import 'package:multipleblocinflutterapp/common/design/app_size.dart';
+import 'package:multipleblocinflutterapp/common/quote/quote.dart';
+import 'package:multipleblocinflutterapp/common/quote/quote_element.dart';
+import 'package:multipleblocinflutterapp/common/widgets/padding_child.dart';
+import 'package:multipleblocinflutterapp/ui/QuoteElementBloc.dart';
+
 
 class CreateQuoteElement extends StatefulWidget {
   const CreateQuoteElement({Key key}) : super(key: key);
@@ -27,7 +27,6 @@ class _CreateQuoteElementState extends State<CreateQuoteElement> {
   AppColors appColors = AppColors();
   AppSize appSize = AppSize();
   final AlertHelper alertHelper = AlertHelper();
-  final MongoDB mongoDB = MongoDB();
   Quote quote = Quote();
 
   TextEditingController _titleController = TextEditingController();
